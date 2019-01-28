@@ -23,7 +23,6 @@ cd boost_1_69_0
 ./bootstrap.sh
 ./b2 --prefix=${BASE}/sw/boost_1.69.0 install
 
-export PATH=$PATH:${BASE}/sw/boost_1.69.0/include
 export CPATH=$CPATH:${BASE}/sw/boost_1.69.0/include
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${BASE}/sw/boost_1.69.0/lib
 
