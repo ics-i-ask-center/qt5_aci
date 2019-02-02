@@ -7,7 +7,8 @@
 #	qt5-qtsvg-devel
 #	etc...
 
-BASE=$PWD
+#BASE=$PWD
+BASE=/opt/
 
 source /opt/rh/devtoolset-7/enable
 mkdir ${BASE}/sw
@@ -21,7 +22,8 @@ wget -nc https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.
 tar -xf boost_1_69_0.tar.gz
 cd boost_1_69_0
 ./bootstrap.sh
-./b2 --prefix=${BASE}/sw/boost_1.69.0 install
+#./b2 --prefix=${BASE}/sw/boost_1.69.0 install
+./b2 install
 
 export CPATH=$CPATH:${BASE}/sw/boost_1.69.0/include
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${BASE}/sw/boost_1.69.0/lib
