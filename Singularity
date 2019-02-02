@@ -50,6 +50,6 @@ Include: yum
     mkdir -p /gpfs/scratch
     mkdir -p /gpfs/group
 
-    scl enable devtoolset-7 bash
+#    scl enable devtoolset-7 bash
 #    echo "scl enable devtoolset-7 bash" >> ~/.bashrc
 
