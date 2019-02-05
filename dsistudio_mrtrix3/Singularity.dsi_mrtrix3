@@ -1,5 +1,5 @@
 BootStrap: shub
-From: shub://willgpaik/qt5_aci
+From: shub://willgpaik/qt5_aci:latest
 %setup
 
 %files
