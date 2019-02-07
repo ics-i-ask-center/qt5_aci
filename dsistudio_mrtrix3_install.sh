@@ -11,7 +11,7 @@
 
 source /opt/rh/devtoolset-7/enable
 mkdir -p ${BASE}/sw
-BASE=/opt/sw
+BASE=/opt
 cd ${BASE}/sw
 #mkdir ${BASE}/sw/boost_1.69.0
 #mkdir src
