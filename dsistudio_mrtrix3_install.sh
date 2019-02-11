@@ -7,30 +7,24 @@
 #	qt5-qtsvg-devel
 #	etc...
 
-#BASE=$PWD
+# Please change the path before run the script (optional):
+BASE=$PWD
 
 source /opt/rh/devtoolset-7/enable
 mkdir -p ${BASE}/sw
-BASE=/opt
 cd ${BASE}/sw
-#mkdir ${BASE}/sw/boost_1.69.0
-#mkdir src
-#cd src
+
 
 # INSTALL BOOST
 wget -nc https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.gz
 tar -xf boost_1_69_0.tar.gz
 cd boost_1_69_0
 ./bootstrap.sh
-#./b2 --prefix=${BASE}/sw/boost_1.69.0 install
 ./b2 install
 
 cd ${BASE}/sw
 rm boost_1_69_0.tar.gz
 rm -rf boost_1_69_0
-
-#export CPATH=$CPATH:${BASE}/sw/boost_1.69.0/include
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${BASE}/sw/boost_1.69.0/lib
 
 cd ${BASE}/sw
 
