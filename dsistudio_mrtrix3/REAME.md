@@ -1,5 +1,5 @@
 Location for executables:  
-1) **MRtrix3**:
+1) **MRtrix3**:  
 /opt/sw/mrtrix3/bin/  
 
 2) **DSI Studio**:  
