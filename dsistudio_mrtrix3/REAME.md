@@ -4,5 +4,5 @@ Location for executables:
 
 2) **DSI Studio**:  
 /opt/sw/dsistudio/build/  
-or use
-$ /opt/sw/dsistudio/build/dsi_studio
+or use  
+`$ /opt/sw/dsistudio/build/dsi_studio`
