@@ -11,6 +11,7 @@ From: shub://willgpaik/qt5_aci:latest
 
 
 %post
+    yum install -y mesa-libGLU-devel.i686 mesa-libGL-devel.i686
 
     source /opt/rh/devtoolset-7/enable
 
