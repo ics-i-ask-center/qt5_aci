@@ -5,13 +5,16 @@ From: shub://willgpaik/qt5_aci:latest
 %files
 
 %environment 
-
+    PATH="PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/"
+    export PATH
 
 %runscript
 
 
 %post
-    yum install -y mesa-libGLU-devel.i686 mesa-libGL-devel.i686
+    yum install -y mesa-libGLU-devel.i686 \
+        mesa-libGL-devel.i686 \
+        libcanberra-gtk*
 
     source /opt/rh/devtoolset-7/enable
 
