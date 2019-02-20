@@ -31,9 +31,9 @@ cd ${BASE}/sw
 # INSTALL MRtrix3
 git clone https://github.com/MRtrix3/mrtrix3.git
 cd mrtrix3
-sed -i -e "s/moc = 'moc'/moc = 'moc-qt5'/g" configure
-sed -i -e "s/qmake = 'qmake'/qmake = 'qmake-qt5'/g" configure
-sed -i -e "s/rcc = 'rcc'/rcc = 'rcc-qt5'/g" configure
+#sed -i -e "s/moc = 'moc'/moc = 'moc-qt5'/g" configure
+#sed -i -e "s/qmake = 'qmake'/qmake = 'qmake-qt5'/g" configure
+#sed -i -e "s/rcc = 'rcc'/rcc = 'rcc-qt5'/g" configure
 ./configure
 ./build
 
