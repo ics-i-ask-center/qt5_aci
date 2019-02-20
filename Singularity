@@ -52,6 +52,8 @@ Include: yum
 
     # Make symlink to vi and qmake
     sudo ln -s `which qmake-qt5` /usr/local/bin/qmake
+    sudo ln -s `which moc-qt5` /usr/local/bin/moc
+    sudo ln -s `which rcc-qt5` /usr/local/bin/rcc
     sudo ln -s `which vim` /usr/local/bin/vi
 
 
