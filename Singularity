@@ -38,7 +38,7 @@ Include: yum
     yum -y install openmpi-devel
     yum -y install cmake3
     yum -y install hdf5-devel
-#    yum -y install boost-devel
+    yum -y install boost-devel
     yum -y install patch
     yum -y install qt5-qtbase-devel
     yum -y install qt5-qtsvg-devel
