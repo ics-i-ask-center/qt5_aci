@@ -15,16 +15,16 @@ mkdir -p ${BASE}/sw
 cd ${BASE}/sw
 
 
-# INSTALL BOOST
-wget -nc https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.gz
-tar -xf boost_1_69_0.tar.gz
-cd boost_1_69_0
-./bootstrap.sh
-./b2 install
+# INSTALL BOOST (NOT NEEDED -> http://dsi-studio.labsolver.org/dsi-studio-download/compile-dsi-studio-on-windows-mac-linux)
+#wget -nc https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.gz
+#tar -xf boost_1_69_0.tar.gz
+#cd boost_1_69_0
+#./bootstrap.sh
+#./b2 install
 
-cd ${BASE}/sw
-rm boost_1_69_0.tar.gz
-rm -rf boost_1_69_0
+#cd ${BASE}/sw
+#rm boost_1_69_0.tar.gz
+#rm -rf boost_1_69_0
 
 cd ${BASE}/sw
 
