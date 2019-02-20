@@ -51,10 +51,10 @@ Include: yum
     mkdir -p /gpfs/group
 
     # Make symlink to vi and qmake
-    sudo ln -s `which qmake-qt5` /usr/local/bin/qmake
-    sudo ln -s `which moc-qt5` /usr/local/bin/moc
-    sudo ln -s `which rcc-qt5` /usr/local/bin/rcc
-    sudo ln -s `which vim` /usr/local/bin/vi
+    ln -s `which qmake-qt5` /usr/local/bin/qmake
+    ln -s `which moc-qt5` /usr/local/bin/moc
+    ln -s `which rcc-qt5` /usr/local/bin/rcc
+    ln -s `which vim` /usr/local/bin/vi
 
 
 #    scl enable devtoolset-8 bash
