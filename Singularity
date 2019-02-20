@@ -50,6 +50,11 @@ Include: yum
     mkdir -p /gpfs/scratch
     mkdir -p /gpfs/group
 
+    # Make symlink to vi and qmake
+    sudo ln -s `which qmake-qt5` /usr/local/bin/qmake
+    sudo ln -s `which vim` /usr/local/bin/vi
+
+
 #    scl enable devtoolset-8 bash
 #    echo "scl enable devtoolset-8 bash" >> ~/.bashrc
 
