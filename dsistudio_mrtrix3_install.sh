@@ -49,7 +49,7 @@ mv frankyeh-TIPL-* tipl
 mv tipl src
 mkdir build
 cd build
-qmake-qt5 ../src/ && make
+qmake ../src/ && make
 cd ..
 wget -nc https://www.dropbox.com/s/ew3rv0jrqqny2dq/dsi_studio_64.zip?dl=1
 mv dsi_studio_64.zip?dl=1 dsi_studio_64.zip
