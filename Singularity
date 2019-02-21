@@ -49,6 +49,8 @@ Include: yum
     mkdir -p /storage/work
     mkdir -p /gpfs/scratch
     mkdir -p /gpfs/group
+    mkdir -p /var/spool/torque
+
 
     # Make symlink to vi and qmake
     ln -s `which qmake-qt5` /usr/local/bin/qmake
