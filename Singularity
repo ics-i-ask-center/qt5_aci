@@ -21,9 +21,9 @@ Include: yum
     yum install -y vte-devel
     yum install -y vte291-devel
     yum install -y vte-profile
-#    yum -y install devtoolset-8
-    yum install -y devtoolset-8-gcc*
-    scl enable devtoolset-8 bash
+#    yum -y install devtoolset-7
+    yum install -y devtoolset-7-gcc*
+    scl enable devtoolset-7 bash
     yum -y groups install "Development Tools"
 #    yum -y groups install "GNOME Desktop"
     yum -y groups install "Base"
@@ -57,6 +57,6 @@ Include: yum
     ln -s `which vim` /usr/local/bin/vi
 
 
-#    scl enable devtoolset-8 bash
-#    echo "scl enable devtoolset-8 bash" >> ~/.bashrc
+#    scl enable devtoolset-7 bash
+#    echo "scl enable devtoolset-7 bash" >> ~/.bashrc
 
