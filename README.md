@@ -10,3 +10,6 @@ and follow commands inside Singularity environment:
 > chmod +x dsistudio_mrtrix3_install.sh  
 > ./dsistudio_mrtrix3_install.sh
 ```
+
+2019/2/21  
+Unable to use **GCC 8.2.1** due to build failure => Going back to **GCC 7.3.1**
