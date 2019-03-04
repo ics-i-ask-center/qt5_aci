@@ -16,7 +16,7 @@ From: shub://willgpaik/qt5_aci:latest
         mesa-libGL-devel.i686 \
         libcanberra-gtk*
 
-    source /opt/rh/devtoolset-7/enable
+    source /opt/rh/devtoolset-8/enable
 
     # Install DSI Studio and MRtrix3
     mkdir -p /opt/sw/
