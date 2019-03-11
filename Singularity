@@ -22,8 +22,8 @@ Include: yum
     yum install -y vte291-devel
     yum install -y vte-profile
 #    yum -y install devtoolset-7
-    yum install -y devtoolset-8-gcc*
-    scl enable devtoolset-8 bash
+    yum install -y devtoolset-7-gcc*
+    scl enable devtoolset-7 bash
     yum -y groups install "Development Tools"
 #    yum -y groups install "GNOME Desktop"
     yum -y groups install "Base"
