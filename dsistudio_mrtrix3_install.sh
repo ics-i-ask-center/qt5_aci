@@ -10,7 +10,7 @@
 # Please change the path before run the script (optional):
 BASE=$PWD
 
-source /opt/rh/devtoolset-8/enable
+source /opt/rh/devtoolset-7/enable
 mkdir -p ${BASE}/sw
 cd ${BASE}/sw
 
