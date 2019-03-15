@@ -5,7 +5,13 @@ Location for executables:
 2) **DSI Studio**:  
 /opt/sw/dsistudio/build/  
 or use  
-`$ /opt/sw/dsistudio/build/dsi_studio`
+`$ /opt/sw/dsistudio/build/dsi_studio`  
+
+`PATH` to executables are updated. To run program, use commands like: `$ dsi_studio` or `$ mrview`
 
 2019/2/15  
 Packages added: mesa-libGLU-devel.i686 mesa-libGL-devel.i686
+
+2019/3/11  
+ACI-I graphics libraries updated:  
+`> singularity shell --nv willgpaik-qt5_aci-master-dsi_mrtrix3.simg`
