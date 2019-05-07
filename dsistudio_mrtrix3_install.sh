@@ -10,7 +10,9 @@
 # Please change the path before run the script (optional):
 BASE=$PWD
 
-source /opt/rh/devtoolset-7/enable
+if [[ $(uname -r | grep el7) ]] ; then
+  source /opt/rh/devtoolset-7/enable
+fi
 mkdir -p ${BASE}/sw
 cd ${BASE}/sw
 
