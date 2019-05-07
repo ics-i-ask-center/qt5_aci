@@ -10,9 +10,11 @@
 # Please change the path before run the script (optional):
 BASE=$PWD
 
+# Run only if system is RHEL/Centos 7
 if [[ $(uname -r | grep el7) ]] ; then
   source /opt/rh/devtoolset-7/enable
 fi
+
 mkdir -p ${BASE}/sw
 cd ${BASE}/sw
 
