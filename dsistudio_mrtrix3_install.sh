@@ -5,7 +5,7 @@
 # Requires:
 #	qt5-qtbase-devel
 #	qt5-qtsvg-devel
-# eigen3-devel
+#	eigen3-devel
 #	etc...
 
 # Please change the path before run the script (optional):
