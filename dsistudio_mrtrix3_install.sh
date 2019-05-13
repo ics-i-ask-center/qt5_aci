@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script installs:
 #	Boost 1.69.0
 #	DSI-Studio
