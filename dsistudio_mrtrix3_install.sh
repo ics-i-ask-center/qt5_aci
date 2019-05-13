@@ -48,13 +48,19 @@ cd dsistudio
 
 # INSTALL DSI Studio
 # Use March 8th commit -> Qt version issue (check out https://github.com/frankyeh/DSI-Studio/issues/34)
-if [[ $(cat /etc/os-release | grep Ubuntu ]] ; then
+function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
+qtver=`qmake-qt5 --version | grep -Eow 'Qt version [^ ]+' | awk '{ print $3 }'`
+qt512=5.12.2
+
+if version_gt $qt512 $qtver ; then
+  # Qt version < 5.12.2
   git clone -b master https://github.com/frankyeh/DSI-Studio.git
   cd DSI-Studio
   git checkout c6cb92c
   cd ..
   mv DSI-Studio src
 else
+  # Qt version >= 5.12.2
   git clone -b master https://github.com/frankyeh/DSI-Studio.git src
 fi
 
