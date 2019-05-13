@@ -57,7 +57,8 @@ if version_gt $qt512 $qtver ; then
   # Qt version < 5.12.2
   git clone -b master https://github.com/frankyeh/DSI-Studio.git
   cd DSI-Studio
-  git checkout c6cb92c
+  # 2019/1/14 commit
+  git checkout f0a5c95
   cd ..
   mv DSI-Studio src
 else
