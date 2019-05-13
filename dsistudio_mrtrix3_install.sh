@@ -47,7 +47,17 @@ mkdir dsistudio
 cd dsistudio
 
 # INSTALL DSI Studio
-git clone -b master https://github.com/frankyeh/DSI-Studio.git src
+# Use March 8th commit -> Qt version issue (check out https://github.com/frankyeh/DSI-Studio/issues/34)
+if [[ $(cat /etc/os-release | grep Ubuntu ]] ; then
+  git clone -b master https://github.com/frankyeh/DSI-Studio.git
+  cd DSI-Studio
+  git checkout c6cb92c
+  cd ..
+  mv DSI-Studio src
+else
+  git clone -b master https://github.com/frankyeh/DSI-Studio.git src
+fi
+
 wget -nc https://github.com/frankyeh/TIPL/zipball/master
 unzip master
 mv frankyeh-TIPL-* tipl
