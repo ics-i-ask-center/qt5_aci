@@ -1,0 +1,33 @@
+BootStrap: shub
+From: shub://willgpaik/qt5_aci:dsi_mrtrix3
+%setup
+
+%files
+
+%environment 
+    PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/"
+    export PATH
+    LD_PRELOAD="/opt/eod/lib/libopentextdlfaker.so.3:/opt/eod/lib/libopentextglfaker.so.3 \
+        :/opt/eod/lib64/libopentextdlfaker.so.3:/opt/eod/lib64/libopentextglfaker.so.3"
+    export LD_PRELOAD
+
+%runscript
+
+
+%post
+    source /opt/rh/devtoolset-7/enable
+
+    cd /opt/sw
+    mkdir ants
+    git clone https://github.com/ANTsX/ANTs.git
+    cd ANTs
+    mkdir build
+    cd build
+    cmake3 .. -DCMAKE_INSTALL_PREFIX=/opt/sw/ants
+    make && make install
+    
+    cd /opt/sw
+    rm -rf ANTs
+
+    
+    
