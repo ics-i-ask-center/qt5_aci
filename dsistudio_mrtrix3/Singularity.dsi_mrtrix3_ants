@@ -5,7 +5,7 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
 %files
 
 %environment 
-    PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/"
+    PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/:/opt/sw/ants/bin/"
     export PATH
     LD_PRELOAD="/opt/eod/lib/libopentextdlfaker.so.3:/opt/eod/lib/libopentextglfaker.so.3 \
         :/opt/eod/lib64/libopentextdlfaker.so.3:/opt/eod/lib64/libopentextglfaker.so.3"
