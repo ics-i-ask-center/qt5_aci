@@ -15,8 +15,27 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
 
 
 %post
+    yum install -y mesa-libGLU-devel.i686 \
+        mesa-libGL-devel.i686 \
+        libcanberra-gtk*
+
     source /opt/rh/devtoolset-7/enable
 
+    # Install DSI Studio and MRtrix3
+    mkdir -p /opt/sw/
+    cd /opt/
+    wget https://raw.githubusercontent.com/willgpaik/qt5_aci/master/dsistudio_mrtrix3_install.sh
+    chmod +x dsistudio_mrtrix3_install.sh
+    ./dsistudio_mrtrix3_install.sh
+    
+    rm dsistudio_mrtrix3_install.sh
+    
+    # Download requires libraries for EoD:
+    cd /opt/
+    svn export https://github.com/willgpaik/MorphoGraphX_aci.git/trunk/eod_graphics_libraries
+    mv eod_graphics_libraries eod
+
+    # Install ANTs
     cd /opt/sw
     mkdir ants
     git clone https://github.com/ANTsX/ANTs.git
