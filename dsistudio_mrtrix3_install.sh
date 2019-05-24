@@ -53,18 +53,18 @@ function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$
 qtver=`qmake-qt5 --version | grep -Eow 'Qt version [^ ]+' | awk '{ print $3 }'`
 qt512=5.12.2
 
-if version_gt $qt512 $qtver ; then
-  # Qt version < 5.12.2
-  git clone -b master https://github.com/frankyeh/DSI-Studio.git
-  cd DSI-Studio
-  # 2019/1/14 commit
-  git checkout f0a5c95
-  cd ..
-  mv DSI-Studio src
-else
-  # Qt version >= 5.12.2
+#if version_gt $qt512 $qtver ; then
+#  # Qt version < 5.12.2
+#  git clone -b master https://github.com/frankyeh/DSI-Studio.git
+#  cd DSI-Studio
+#  # 2019/1/14 commit
+#  git checkout f0a5c95
+#  cd ..
+#  mv DSI-Studio src
+#else
+#  # Qt version >= 5.12.2
   git clone -b master https://github.com/frankyeh/DSI-Studio.git src
-fi
+#fi
 
 wget -nc https://github.com/frankyeh/TIPL/zipball/master
 unzip master
