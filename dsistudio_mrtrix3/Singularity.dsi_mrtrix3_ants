@@ -42,6 +42,7 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     cd ANTs
     mkdir build
     cd build
+    git config --global url."https://".insteadOf git://
     cmake3 .. -DCMAKE_INSTALL_PREFIX=/opt/sw/ants
     make && make install
     
