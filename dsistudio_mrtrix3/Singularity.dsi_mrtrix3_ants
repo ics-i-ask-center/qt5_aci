@@ -30,11 +30,6 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     
     rm dsistudio_mrtrix3_install.sh
     
-    # Download requires libraries for EoD:
-    cd /opt/
-    svn export https://github.com/willgpaik/MorphoGraphX_aci.git/trunk/eod_graphics_libraries
-    mv eod_graphics_libraries eod
-
     # Install ANTs
     cd /opt/sw
     mkdir ants
@@ -48,6 +43,12 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     
     cd /opt/sw
     rm -rf ANTs
+    
+    # Download requires libraries for EoD:
+    cd /opt/
+    svn export https://github.com/willgpaik/MorphoGraphX_aci.git/trunk/eod_graphics_libraries
+    mv eod_graphics_libraries eod
+
 
     
     
