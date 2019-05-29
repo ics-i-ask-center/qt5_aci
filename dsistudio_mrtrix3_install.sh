@@ -81,7 +81,7 @@ cd dsi_studio_64
 find . -name '*.dll' -exec rm {} \;
 rmdir iconengines imageformats platforms printsupport
 rm dsi_studio.exe
-cp -r ../build/dsi_studio .
+cp ../build/dsi_studio .
 
 
 
