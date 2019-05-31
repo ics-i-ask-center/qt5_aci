@@ -21,6 +21,8 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
 
     source /opt/rh/devtoolset-7/enable
     
+    mkdir -p /opt/sw/
+    
     # Install ANTs
     cd /opt/sw
     mkdir ants
@@ -37,7 +39,6 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     
 
     # Install DSI Studio and MRtrix3
-    mkdir -p /opt/sw/
     cd /opt/
     wget https://raw.githubusercontent.com/willgpaik/qt5_aci/master/dsistudio_mrtrix3_install.sh
     chmod +x dsistudio_mrtrix3_install.sh
