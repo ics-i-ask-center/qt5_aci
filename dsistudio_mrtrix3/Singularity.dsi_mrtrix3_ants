@@ -20,15 +20,6 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
         libcanberra-gtk*
 
     source /opt/rh/devtoolset-7/enable
-
-    # Install DSI Studio and MRtrix3
-    mkdir -p /opt/sw/
-    cd /opt/
-    wget https://raw.githubusercontent.com/willgpaik/qt5_aci/master/dsistudio_mrtrix3_install.sh
-    chmod +x dsistudio_mrtrix3_install.sh
-    ./dsistudio_mrtrix3_install.sh
-    
-    rm dsistudio_mrtrix3_install.sh
     
     # Install ANTs
     cd /opt/sw
@@ -43,6 +34,17 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     
     cd /opt/sw
     rm -rf ANTs
+    
+
+    # Install DSI Studio and MRtrix3
+    mkdir -p /opt/sw/
+    cd /opt/
+    wget https://raw.githubusercontent.com/willgpaik/qt5_aci/master/dsistudio_mrtrix3_install.sh
+    chmod +x dsistudio_mrtrix3_install.sh
+    ./dsistudio_mrtrix3_install.sh
+    
+    rm dsistudio_mrtrix3_install.sh
+    
     
     # Download requires libraries for EoD:
     cd /opt/
