@@ -31,7 +31,7 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     mkdir build
     cd build
     git config --global url."https://".insteadOf git://
-    cmake3 .. -DCMAKE_INSTALL_PREFIX=/opt/sw/ants
+    cmake3 .. -DCMAKE_INSTALL_PREFIX=/opt/sw/ants -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
     make && make install
     
     cd /opt/sw
