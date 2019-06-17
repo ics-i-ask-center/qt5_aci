@@ -35,7 +35,6 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     
     cd /opt/sw
     rm -rf ANTs
-    rm -rf ant_build
     
     
 
