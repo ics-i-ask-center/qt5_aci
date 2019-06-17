@@ -28,7 +28,7 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     cd /opt/sw
     mkdir ants
     git clone https://github.com/ANTsX/ANTs.git
-    cd ant
+    cd ants
     git config --global url."https://".insteadOf git://
     cmake3 /opt/sw/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
     make -j 2
