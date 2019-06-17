@@ -4,7 +4,8 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
 
 %files
 
-%environment 
+%environment
+    export ANTSPATH=/opt/sw/ants/bin
     PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/:/opt/sw/ants/bin/"
     export PATH
     LD_PRELOAD="/opt/eod/lib/libopentextdlfaker.so.3:/opt/eod/lib/libopentextglfaker.so.3 \
@@ -26,12 +27,11 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     # Install ANTs
     cd /opt/sw
     mkdir ants
-    mkdir ant_build
     git clone https://github.com/ANTsX/ANTs.git
-    cd ant_build
+    cd ant
     git config --global url."https://".insteadOf git://
-    cmake3 /opt/sw/ANTs -DCMAKE_INSTALL_PREFIX=/opt/sw/ants -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
-    make -j 2 && make install
+    cmake3 /opt/sw/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
+    make -j 2
     
     cd /opt/sw
     rm -rf ANTs
