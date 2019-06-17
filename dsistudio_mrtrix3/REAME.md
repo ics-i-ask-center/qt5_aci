@@ -15,3 +15,6 @@ Packages added: mesa-libGLU-devel.i686 mesa-libGL-devel.i686
 2019/3/11  
 ACI-I graphics libraries updated:  
 `> singularity shell --nv willgpaik-qt5_aci-master-dsi_mrtrix3.simg`
+
+2019/6/17  
+**Singularity.dsi_mrtrix3_ants** cannot be build on Singularity Hub due to 2 hr time restriction
