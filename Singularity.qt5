@@ -9,33 +9,8 @@ From: willgpaik/centos7_aci
 
 %runscript
 
-
 %post
-    # commands to be executed inside container during bootstrap
-    # add python and install some packages
-    yum update -y
-    yum install -y epel-release
-    yum install -y terminator
-    yum install -y centos-release-scl
-    yum install -y vte-devel
-    yum install -y vte291-devel
-    yum install -y vte-profile
     scl enable devtoolset-8 bash
-    yum -y groups install "Development Tools"
-#    yum -y groups install "GNOME Desktop"
-    yum -y groups install "Base"
-#    yum -y groups install "X Window System" "Desktop" "Fonts"
-    yum -y install git cmake gcc-c++ gcc binutils \
-	libX11-devel libXpm-devel libXft-devel libXext-devel
-    yum -y install gcc-gfortran openssl-devel pcre-devel \
-	mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
-	fftw-devel cfitsio-devel graphviz-devel \
-	avahi-compat-libdns_sd-devel libldap-dev python-devel \
-	libxml2-devel gsl-devel
-    yum -y install cmake3
-    yum -y install hdf5-devel
-    yum -y install patch
-    yum -y install git g++ numpy eigen3-devel zlib-devel libqt4-devel libgl1-mesa-dev libtiff-devel
     # required libs: https://wiki.qt.io/Building_Qt_5_from_Git
     yum -y install libxcb libxcb-devel xcb-util xcb-util-devel mesa-libGL-devel libxkbcommon-devel
     yum -y install mesa-libGLES-devel
