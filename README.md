@@ -24,3 +24,6 @@ Updated dsistudio_mrtrix3_install.sh due to Qt version issue
 
 2019/5/24  
 Reverted changes made on 2019/5/13
+
+2019/6/24  
+Newer version qt5 installation recipe added (in progress)
