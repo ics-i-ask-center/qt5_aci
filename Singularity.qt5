@@ -38,6 +38,7 @@ From: willgpaik/centos7_aci
     yum -y install git g++ numpy eigen3-devel zlib-devel libqt4-devel libgl1-mesa-dev libtiff-devel
     # required libs: https://wiki.qt.io/Building_Qt_5_from_Git
     yum -y install libxcb libxcb-devel xcb-util xcb-util-devel mesa-libGL-devel libxkbcommon-devel
+    # yum -y install mesa-libGLES-devel
     yum -y update
    
     mkdir -p /storage/home
