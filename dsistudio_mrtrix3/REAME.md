@@ -1,3 +1,5 @@
+**NOTE: DO NOT rebuild "Singularity.dsi_mrtrix3" image.**
+
 Location for executables:  
 1) **MRtrix3**:  
 /opt/sw/mrtrix3/bin/  
