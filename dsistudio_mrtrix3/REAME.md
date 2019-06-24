@@ -21,3 +21,7 @@ ACI-I graphics libraries updated:
 
 2019/6/17  
 ~~**Singularity.dsi_mrtrix3_ants** cannot be build on Singularity Hub due to 2 hr time restriction~~
+Recipe with Ants is added
+
+2019/6/24  
+Recipe with FLS is added
