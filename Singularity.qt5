@@ -40,12 +40,6 @@ From: willgpaik/centos7_aci
     yum -y install libxcb libxcb-devel xcb-util xcb-util-devel mesa-libGL-devel libxkbcommon-devel
     yum -y install mesa-libGLES-devel
     yum -y update
-   
-    mkdir -p /storage/home
-    mkdir -p /storage/work
-    mkdir -p /gpfs/scratch
-    mkdir -p /gpfs/group
-    mkdir -p /var/spool/torque
     
     cd /tmp/
     wget http://download.qt.io/official_releases/qt/5.13/5.13.0/single/qt-everywhere-src-5.13.0.tar.xz
@@ -54,6 +48,8 @@ From: willgpaik/centos7_aci
     ./configure -opensource -confirm-license
     make -j 2
     make install
+    rm qt-everywhere-src-5.13.0.tar.xz
+    rm -rf qt-everywhere-src-5.13.0
 
 
     # Make symlink to vi and qmake
