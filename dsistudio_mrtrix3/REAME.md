@@ -1,4 +1,5 @@
-**NOTE: DO NOT rebuild "Singularity.dsi_mrtrix3" image.**
+**NOTE: DO NOT rebuild "Singularity.dsi_mrtrix3" image.**  
+(Last successful build was Mar 12 2019)
 
 Location for executables:  
 1) **MRtrix3**:  
