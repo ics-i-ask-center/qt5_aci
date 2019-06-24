@@ -30,10 +30,6 @@ From: shub://willgpaik/qt5_aci:latest
     
     rm dsistudio_mrtrix3_install.sh
     
-    cd /opt/sw
-    wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
-    python fslinstaller.py
-    
     # Download requires libraries for EoD:
     cd /opt/
     svn export https://github.com/willgpaik/MorphoGraphX_aci.git/trunk/eod_graphics_libraries
