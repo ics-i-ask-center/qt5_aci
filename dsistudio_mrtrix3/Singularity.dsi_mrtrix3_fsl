@@ -1,5 +1,5 @@
 BootStrap: shub
-From: shub://willgpaik/qt5_aci:latest
+From: shub://willgpaik/qt5_aci:dsi_mrtrix3
 %setup
 
 %files
