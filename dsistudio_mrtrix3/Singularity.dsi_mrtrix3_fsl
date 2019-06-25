@@ -10,7 +10,6 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     LD_PRELOAD="/opt/eod/lib/libopentextdlfaker.so.3:/opt/eod/lib/libopentextglfaker.so.3 \
         :/opt/eod/lib64/libopentextdlfaker.so.3:/opt/eod/lib64/libopentextglfaker.so.3"
     export LD_PRELOAD
-    export FSLDIR=
 
 %runscript
 
