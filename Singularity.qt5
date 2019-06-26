@@ -41,7 +41,7 @@ From: willgpaik/centos7_aci
     #make -j 2 && make install
     
     cd /tmp
-    rm -rf qtbase qtcharts
+    #rm -rf qtbase qtcharts
 
 
     # Make symlink to vi and qmake
