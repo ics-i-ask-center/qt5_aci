@@ -29,7 +29,7 @@ From: willgpaik/centos7_aci
     
     git clone https://github.com/qt/qtbase.git
     cd qtbase
-    ./configure -opensource -confirm-license
+    ./configure -opensource -confirm-license -silent
     gmake -j 2
     gmake install
     
