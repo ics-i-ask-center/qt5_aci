@@ -14,6 +14,7 @@ From: willgpaik/centos7_aci
     # required libs: https://wiki.qt.io/Building_Qt_5_from_Git
     yum -y install libxcb libxcb-devel xcb-util xcb-util-devel mesa-libGL-devel libxkbcommon-devel
     yum -y install mesa-libGLES-devel
+    yum -y install perl-devel
     yum -y update
     
     cd /tmp/
