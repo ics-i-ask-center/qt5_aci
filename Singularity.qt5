@@ -35,10 +35,10 @@ From: willgpaik/centos7_aci
     
     cd /tmp/
     
-    git clone https://github.com/qt/qtcharts.git
-    cd qtcharts
-    qmake
-    make -j 2 && make install
+    #git clone https://github.com/qt/qtcharts.git
+    #cd qtcharts
+    #qmake
+    #make -j 2 && make install
     
     cd /tmp
     rm -rf qtbase qtcharts
