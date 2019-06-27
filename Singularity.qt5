@@ -31,6 +31,7 @@ From: willgpaik/centos7_aci
     git clone https://github.com/qt/qtbase.git
     cd qtbase
     ./configure -opensource -confirm-license -silent
+    # https://www.qtcentre.org/threads/16301-Qt-installation-error
     find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
     gmake -j 2
     gmake install
