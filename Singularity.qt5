@@ -33,7 +33,7 @@ From: willgpaik/centos7_aci
     ./configure -opensource -confirm-license -silent
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
     find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
-    gmake -j 2
+    gmake
     gmake install
     
     cd /tmp/
