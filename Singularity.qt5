@@ -33,25 +33,25 @@ From: willgpaik/centos7_aci
     ./configure -opensource -confirm-license -silent
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
     find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
-    gmake
+    gmake -j 2
     gmake install
     
     cd /tmp/
     
-    #git clone https://github.com/qt/qtcharts.git
-    #cd qtcharts
-    #qmake
-    #make -j 2 && make install
+    git clone https://github.com/qt/qtcharts.git
+    cd qtcharts
+    qmake
+    make -j 2 && make install
     
     cd /tmp
     #rm -rf qtbase qtcharts
 
 
     # Make symlink to vi and qmake
-    ln -s `which qmake-qt5` /usr/local/bin/qmake
-    ln -s `which moc-qt5` /usr/local/bin/moc
-    ln -s `which rcc-qt5` /usr/local/bin/rcc
-    ln -s `which vim` /usr/local/bin/vi
+    #ln -s `which qmake-qt5` /usr/local/bin/qmake
+    #ln -s `which moc-qt5` /usr/local/bin/moc
+    #ln -s `which rcc-qt5` /usr/local/bin/rcc
+    #ln -s `which vim` /usr/local/bin/vi
 
 
 #    scl enable devtoolset-7 bash
