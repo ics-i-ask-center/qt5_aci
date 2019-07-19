@@ -28,20 +28,33 @@ From: willgpaik/centos7_aci
     #rm qt-everywhere-src-5.13.0.tar.xz
     #rm -rf qt-everywhere-src-5.13.0
     
-    git clone https://github.com/qt/qtbase.git
-    cd qtbase
+    #git clone https://github.com/qt/qtbase.git
+    https://github.com/qt/qtbase/archive/v5.13.0.tar.gz
+    tar -xf v5.13.0.tar.gz
+    cd qtbase-5.13.0
     ./configure -opensource -confirm-license -silent
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
     find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
     gmake -j 2
     gmake install
     
+    cd ..
+    rm v5.13.0.tar.gz
+    
+    export PATH=/usr/local/Qt-5.13.0/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/Qt-5.13.0
+    
     cd /tmp/
     
-    git clone https://github.com/qt/qtcharts.git
-    cd qtcharts
+    #git clone https://github.com/qt/qtcharts.git
+    wget https://github.com/qt/qtcharts/archive/v5.13.0.tar.gz
+    tar -xf v5.13.0.tar.gz
+    cd qtcharts-5.13.0
     qmake
     make -j 2 && make install
+    
+    cd ..
+    rm v5.13.0.tar.gz
     
     cd /tmp
     #rm -rf qtbase qtcharts
