@@ -42,7 +42,7 @@ From: willgpaik/centos7_aci
     rm v5.13.0.tar.gz
     
     export PATH=/usr/local/Qt-5.13.0/bin:$PATH
-    export LD_LIBRARY_PATH=/usr/local/Qt-5.13.0
+    export LD_LIBRARY_PATH=/usr/local/Qt-5.13.0:$LD_LIBRARY_PATH
     
     cd /tmp/
     
