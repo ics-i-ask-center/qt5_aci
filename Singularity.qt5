@@ -5,7 +5,9 @@ From: willgpaik/centos7_aci
 
 %files
 
-%environment 
+%environment
+    export PATH=/usr/local/Qt-5.13.0/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/Qt-5.13.0/lib:$LD_LIBRARY_PATH
 
 %runscript
 
@@ -29,7 +31,7 @@ From: willgpaik/centos7_aci
     #rm -rf qt-everywhere-src-5.13.0
     
     #git clone https://github.com/qt/qtbase.git
-    https://github.com/qt/qtbase/archive/v5.13.0.tar.gz
+    wget https://github.com/qt/qtbase/archive/v5.13.0.tar.gz
     tar -xf v5.13.0.tar.gz
     cd qtbase-5.13.0
     ./configure -opensource -confirm-license -silent
