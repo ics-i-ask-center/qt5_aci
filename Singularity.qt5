@@ -30,7 +30,8 @@ From: willgpaik/centos7_aci
     #rm qt-everywhere-src-5.13.0.tar.xz
     #rm -rf qt-everywhere-src-5.13.0
     
-    #git clone https://github.com/qt/qtbase.git
+    # Install QtBase
+    git clone https://github.com/qt/qtbase.git
     cd qtbase-5.12.5
     ./configure -opensource -confirm-license -silent
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
@@ -42,9 +43,10 @@ From: willgpaik/centos7_aci
     export PATH=/usr/local/Qt-5.12.5/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5:$LD_LIBRARY_PATH
     
+    # Install QtCharts
     cd /tmp/
     
-    #git clone https://github.com/qt/qtcharts.git
+    git clone https://github.com/qt/qtcharts.git
     cd qtcharts
     qmake
     make -j 2 && make install
