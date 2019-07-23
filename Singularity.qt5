@@ -39,9 +39,10 @@ From: willgpaik/centos7_aci
     gmake -j 2
     gmake install
 
-    
     export PATH=/usr/local/Qt-5.12.5/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5:$LD_LIBRARY_PATH
+    
+    find /usr/local/Qt-5.12.5/bin -iname '*.pl' -print0 | xargs -0 chmod -c -x
     
     # Install QtCharts
     cd /tmp/
