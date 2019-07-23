@@ -19,18 +19,9 @@ From: willgpaik/centos7_aci
     yum -y install perl-devel
     yum -y update
     
-    cd /tmp/
-    #wget http://download.qt.io/official_releases/qt/5.13/5.13.0/single/qt-everywhere-src-5.13.0.tar.xz
-    #tar -xf qt-everywhere-src-5.13.0.tar.xz
-    #cd qt-everywhere-src-5.13.0
-    #./configure -opensource -confirm-license -skip qtconnectivity -skip network -skip gamepad -skip bluetooth \
-    #    -skip sensors -skip webenginecore
-    #make -j 2
-    #make install
-    #rm qt-everywhere-src-5.13.0.tar.xz
-    #rm -rf qt-everywhere-src-5.13.0
     
     # Install QtBase
+    cd /tmp/
     git clone https://github.com/qt/qtbase.git
     cd qtbase
     ./configure -opensource -confirm-license -silent -nomake examples
@@ -46,7 +37,6 @@ From: willgpaik/centos7_aci
     
     # Install QtCharts
     cd /tmp/
-    
     git clone https://github.com/qt/qtcharts.git
     cd qtcharts
     qmake
@@ -57,12 +47,6 @@ From: willgpaik/centos7_aci
     rm -rf qtbase qtcharts
 
 
-    # Make symlink to vi and qmake
-    #ln -s `which qmake-qt5` /usr/local/bin/qmake
-    #ln -s `which moc-qt5` /usr/local/bin/moc
-    #ln -s `which rcc-qt5` /usr/local/bin/rcc
-    #ln -s `which vim` /usr/local/bin/vi
-
-
-#    scl enable devtoolset-7 bash
-#    echo "scl enable devtoolset-7 bash" >> ~/.bashrc
+    # Make symlink to qmake-qt5
+    ln -s `which qmake` /usr/local/Qt-5.12.5/bin/qmake-qt5
+    
