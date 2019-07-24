@@ -20,6 +20,17 @@ From: shub://willgpaik/qt5_aci:qt5
         libcanberra-gtk*
     yum -y install devtoolset-7-gcc*
     yum -y update
+    
+    PATH="/opt/sw/python/bin:$PATH:/usr/lib64/openmpi/bin/"
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64/openmpi/lib/"
+    MPI_ROOT=/usr/lib64/openmpi/
+    export PATH
+    export LD_LIBRARY_PATH
+    export MPI_ROOT
+    export BOOST_ROOT=/usr/local/
+
+    export PATH=/usr/local/Qt-5.12.5/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5/lib:$LD_LIBRARY_PATH
 
     source /opt/rh/devtoolset-7/enable
 
