@@ -1,5 +1,5 @@
 BootStrap: shub
-From: shub://willgpaik/qt5_aci:latest
+From: shub://willgpaik/qt5_aci:qt5
 %setup
 
 %files
@@ -18,6 +18,8 @@ From: shub://willgpaik/qt5_aci:latest
     yum install -y mesa-libGLU-devel.i686 \
         mesa-libGL-devel.i686 \
         libcanberra-gtk*
+    yum -y install devtoolset-7-gcc*
+    yum -y update
 
     source /opt/rh/devtoolset-7/enable
 
