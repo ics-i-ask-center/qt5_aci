@@ -8,6 +8,7 @@ From: willgpaik/centos7_aci
 %environment
     export PATH=/usr/local/Qt-5.12.5/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5/lib:$LD_LIBRARY_PATH
+    export CPATH=/usr/local/Qt-5.12.5/include:$CPATH
 
 %runscript
 
