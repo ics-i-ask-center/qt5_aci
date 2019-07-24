@@ -42,9 +42,16 @@ From: willgpaik/centos7_aci
     qmake
     make -j 2 && make install
     
+    # Install QtSVG
+    cd /tmp/
+    git clone https://github.com/qt/qtsvg.git
+    cd qtsvg
+    qmake
+    make -j 2 && make install
+    
     
     cd /tmp
-    rm -rf qtbase qtcharts
+    rm -rf qtbase qtcharts qtsvg
 
 
     # Make symlink to qmake-qt5
