@@ -23,7 +23,8 @@ From: shub://willgpaik/qt5_aci:dsi_mrtrix3
     yum install -y mesa-libGLU-devel.i686 \
         mesa-libGL-devel.i686 \
         libcanberra-gtk*
-    yum -y install libpng12 libmng
+    # FSLView requirements 
+    yum -y install libpng12-devel libmng-devel
 
     source /opt/rh/devtoolset-7/enable
     
