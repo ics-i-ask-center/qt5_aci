@@ -14,7 +14,7 @@ BASE=$PWD
 
 # Run only if system is Centos 7
 if [[ $(cat /etc/os-release | grep CentOS-7) ]] ; then
-  source /opt/rh/devtoolset-7/enable
+  source /opt/rh/devtoolset-8/enable
 fi
 
 mkdir -p ${BASE}/sw
