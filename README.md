@@ -26,4 +26,10 @@ Updated dsistudio_mrtrix3_install.sh due to Qt version issue
 Reverted changes made on 2019/5/13
 
 2019/6/24  
-Newer version qt5 installation recipe added (in progress)
+~~Newer version qt5 installation recipe added (in progress)~~
+
+2019/7/22  
+Qt is updated to 5.12
+
+2019/7/24  
+Qt SVG is added
