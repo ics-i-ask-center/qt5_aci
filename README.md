@@ -29,7 +29,8 @@ Reverted changes made on 2019/5/13
 ~~Newer version qt5 installation recipe added (in progress)~~
 
 2019/7/22  
-Qt is updated to 5.12
+Qt is updated to 5.12 with Qt Charts (for DSI Studio)
 
 2019/7/24  
-Qt SVG is added
+Qt SVG is added (for MRtrix 3)  
+32-bit EoD graphics libraries are disable (to aviod warnings)
