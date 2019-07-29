@@ -34,3 +34,6 @@ Qt is updated to 5.12 with Qt Charts (for DSI Studio)
 2019/7/24  
 Qt SVG is added (for MRtrix 3)  
 32-bit EoD graphics libraries are disable (to aviod warnings)
+
+2019/7/29  
+NVIDIA driver is added
