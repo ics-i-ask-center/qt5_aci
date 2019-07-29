@@ -18,6 +18,16 @@ From: willgpaik/centos7_aci
     yum -y install libxcb libxcb-devel xcb-util xcb-util-devel mesa-libGL-devel libxkbcommon-devel
     yum -y install mesa-libGLES-devel
     yum -y install perl-devel
+    
+    yum -y install epel-release
+    yum -y install dkms
+    cd /tmp
+    wget http://us.download.nvidia.com/tesla/390.30/nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    chmod +x nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    rpm -i nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    rm nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    yum clean all
+    yum -y install cuda-drivers
     yum -y update
     
     
