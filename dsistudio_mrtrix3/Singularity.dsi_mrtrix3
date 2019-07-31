@@ -19,16 +19,6 @@ From: shub://willgpaik/qt5_aci:qt5
         libcanberra-gtk*
     yum -y install devtoolset-7-gcc*
     
-    yum -y install epel-release
-    yum -y install dkms
-    cd /tmp
-    wget http://us.download.nvidia.com/tesla/390.30/nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
-    chmod +x nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
-    rpm -i nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
-    rm nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
-    yum clean all
-    yum -y install cuda-drivers
-    
     yum -y update
     
     PATH="/opt/sw/python/bin:$PATH:/usr/lib64/openmpi/bin/"
@@ -58,3 +48,15 @@ From: shub://willgpaik/qt5_aci:qt5
     cd /opt/
     svn export https://github.com/willgpaik/MorphoGraphX_aci.git/trunk/eod_graphics_libraries
     mv eod_graphics_libraries eod
+    
+    
+    yum -y install epel-release
+    yum -y install dkms
+    cd /tmp
+    wget http://us.download.nvidia.com/tesla/390.30/nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    chmod +x nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    rpm -i nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    rm nvidia-diag-driver-local-repo-rhel7-390.30-1.0-1.x86_64.rpm
+    yum clean all
+    yum -y install cuda-drivers
+    
