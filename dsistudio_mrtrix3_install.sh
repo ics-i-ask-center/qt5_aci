@@ -66,7 +66,7 @@ qt512=5.12.2
 #  # Qt version >= 5.12.2
   git clone -b master https://github.com/frankyeh/DSI-Studio.git src
   # commit from 7/24
-  git checkout 9b8ba3e
+#  git checkout 9b8ba3e
 #fi
 
 wget -nc https://github.com/frankyeh/TIPL/zipball/master
