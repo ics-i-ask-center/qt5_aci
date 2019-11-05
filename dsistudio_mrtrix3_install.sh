@@ -77,14 +77,15 @@ mkdir build
 cd build
 qmake ../src/ && make
 cd ..
-wget -nc https://www.dropbox.com/s/ew3rv0jrqqny2dq/dsi_studio_64.zip?dl=1
-mv dsi_studio_64.zip?dl=1 dsi_studio_64.zip
-unzip dsi_studio_64.zip
-cd dsi_studio_64
-find . -name '*.dll' -exec rm {} \;
-rmdir iconengines imageformats platforms printsupport
-rm dsi_studio.exe
-cp ../build/dsi_studio .
+# below link is dead
+#wget -nc https://www.dropbox.com/s/ew3rv0jrqqny2dq/dsi_studio_64.zip?dl=1
+#mv dsi_studio_64.zip?dl=1 dsi_studio_64.zip
+#unzip dsi_studio_64.zip
+#cd dsi_studio_64
+#find . -name '*.dll' -exec rm {} \;
+#rmdir iconengines imageformats platforms printsupport
+#rm dsi_studio.exe
+#cp ../build/dsi_studio .
 
 
 
