@@ -37,3 +37,6 @@ Qt SVG is added (for MRtrix 3)
 
 2019/7/29  
 NVIDIA driver is added to DSI Studio MRtrix3 container
+
+2019/11/10  
+Qt version 5.12.5 is used
