@@ -25,6 +25,7 @@ From: willgpaik/centos7_aci
     # Install QtBase
     cd /tmp/
     git clone https://github.com/qt/qtbase.git
+    git checkout 5.12.5
     cd qtbase
     ./configure -opensource -confirm-license -silent -nomake examples
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
@@ -41,6 +42,7 @@ From: willgpaik/centos7_aci
     cd /tmp/
     git clone https://github.com/qt/qtcharts.git
     cd qtcharts
+    git checkout 5.12.5
     qmake
     make -j 2 && make install
     
@@ -48,6 +50,7 @@ From: willgpaik/centos7_aci
     cd /tmp/
     git clone https://github.com/qt/qtsvg.git
     cd qtsvg
+    git checkout 5.12.5
     qmake
     make -j 2 && make install
     
