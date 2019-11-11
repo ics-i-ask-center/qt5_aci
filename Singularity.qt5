@@ -25,8 +25,8 @@ From: willgpaik/centos7_aci
     # Install QtBase
     cd /tmp/
     git clone https://github.com/qt/qtbase.git
-    git checkout 5.12.5
     cd qtbase
+    git checkout 5.12.5
     ./configure -opensource -confirm-license -silent -nomake examples
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
     find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
