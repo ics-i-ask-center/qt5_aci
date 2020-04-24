@@ -1,0 +1,53 @@
+Bootstrap: shub
+From: willgpaik/ubuntu_aci:1604
+
+%setup
+
+%files
+
+%environment
+    export PATH=/usr/local/Qt-5.14.2/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/Qt-5.14.2/lib:$LD_LIBRARY_PATH
+    export CPATH=/usr/local/Qt-5.14.2/include:$CPATH
+    
+%post
+    apt-get update
+    apt-get -y upgrade
+
+    cd /tmp
+    rm -rf qtbase qtcharts qtsvg
+
+    # Install QtBase
+    cd /tmp/
+    git clone https://github.com/qt/qtbase.git
+    cd qtbase
+    git checkout 5.14.2
+    ./configure -opensource -confirm-license -silent -nomake examples
+    # https://www.qtcentre.org/threads/16301-Qt-installation-error
+    find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
+    make -j 2
+    make install
+
+    export PATH=/usr/local/Qt-5.14.2/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/Qt-5.14.2:$LD_LIBRARY_PATH
+
+    find /usr/local/Qt-5.14.2/bin -iname '*.pl' -print0 | xargs -0 chmod -c -x
+
+    # Install QtCharts
+    cd /tmp/
+    git clone https://github.com/qt/qtcharts.git
+    cd qtcharts
+    git checkout 5.14.2
+    qmake
+    make -j 2 && make install
+
+    # Install QtSVG
+    cd /tmp/
+    git clone https://github.com/qt/qtsvg.git
+    cd qtsvg
+    git checkout 5.14.2
+    qmake
+    make -j 2 && make install
+
+    cd /tmp
+    rm -rf qtbase qtcharts qtsvg
