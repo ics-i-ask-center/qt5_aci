@@ -1,5 +1,5 @@
 # qt5_aci
-Singularity recipe for Qt5 on Centos 7 For ICS  
+Singularity recipe for Qt5 on Centos 7 and Ubuntu 16.04 For ICS  
 
 **NOTE: DO NOT rebuild "Singularity.dsi_mrtrix3" image.**  
 (Last successful build was Mar 12 2019)
@@ -40,3 +40,6 @@ NVIDIA driver is added to DSI Studio MRtrix3 container
 
 2019/11/10  
 Qt version 5.12.5 is used
+
+2020/4/24  
+Ubuntu 16.04 version added with Qt 5.14.2
