@@ -25,3 +25,6 @@ Recipe with Ants is added
 
 2019/6/24  
 Recipe with FLS is added
+
+2020/6/22  
+NVIDIA driver installation and EoD libraries are removed
