@@ -14,7 +14,6 @@ From: shub://willgpaik/qt5_aci:qt5
 
 
 %post
-    yum -y install VirtualGL*
     yum install -y mesa-libGLU-devel.i686 \
         mesa-libGL-devel.i686 \
         libcanberra-gtk*
