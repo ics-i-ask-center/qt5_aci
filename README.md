@@ -43,3 +43,6 @@ Qt version 5.12.5 is used
 
 2020/4/24  
 Ubuntu 16.04 version added with Qt 5.14.2
+
+2020/6/20  
+Qt5 container is updated to have nvidia driver
