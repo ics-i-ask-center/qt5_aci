@@ -44,7 +44,7 @@ From: willgpaik/ubuntu_aci:1604
     git clone https://github.com/qt/qtbase.git
     cd qtbase
     git checkout 5.14.2
-    ./configure -opensource -confirm-license -silent -nomake examples
+    ./configure -opensource -confirm-license -silent -nomake examples -qt-xcb
     # https://www.qtcentre.org/threads/16301-Qt-installation-error
     find /tmp/qtbase/src -iname '*.pl' -print0 | xargs -0 chmod -c -x
     make -j 2
