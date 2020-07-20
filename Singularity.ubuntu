@@ -11,6 +11,7 @@ From: willgpaik/ubuntu_aci:1604
     export CPATH=/usr/local/Qt-5.14.2/include:$CPATH
     
 %post
+    # Required packages for xcb: https://doc.qt.io/qt-5/linux-requirements.html
     apt-get -y install xcb \
         libfontconfig1-dev \
         libfreetype6-dev \
@@ -23,6 +24,15 @@ From: willgpaik/ubuntu_aci:1604
         libx11-xcb-dev \
         libxcb-glx0-dev \
         libxkbcommon-x11-dev
+    apt-get -y install libxcb-keysyms1-dev \
+        libxcb-image0-dev \
+        libxcb-shm0-dev \
+        libxcb-icccm4-dev \
+        libxcb-sync0-dev \
+        libxcb-xfixes0-dev \
+        libxcb-shape0-dev \
+        libxcb-randr0-dev \
+        libxcb-render-util0-dev
     apt-get update
     apt-get -y upgrade
 
