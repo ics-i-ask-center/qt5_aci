@@ -6,9 +6,7 @@ From: willgpaik/ubuntu_aci:1604
 %files
 
 %environment
-    export PATH=/usr/local/Qt-5.14.2/bin:$PATH
-    export LD_LIBRARY_PATH=/usr/local/Qt-5.14.2/lib:$LD_LIBRARY_PATH
-    export CPATH=/usr/local/Qt-5.14.2/include:$CPATH
+
     
 %post
     # Required packages for xcb: https://doc.qt.io/qt-5/linux-requirements.html
