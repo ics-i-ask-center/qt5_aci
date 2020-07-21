@@ -10,9 +10,9 @@ From: willgpaik/ubuntu_aci:1604
     
 %post
     # Required packages for xcb: https://doc.qt.io/qt-5/linux-requirements.html
+    apt-get -y install software-properties-common
     apt-get update
     apt-get -y upgrade
-    apt-get -y install software-properties-common
     apt-get -y install xcb \
         libfontconfig1-dev \
         libfreetype6-dev \
