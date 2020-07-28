@@ -46,3 +46,6 @@ Ubuntu 16.04 version added with Qt 5.14.2
 
 2020/6/20  
 Qt5 container is updated to have nvidia driver
+
+2020/7/27  
+Ubuntu container is updated to have NVIDIA driver (Ubuntu 16.04 based)
