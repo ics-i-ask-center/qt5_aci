@@ -1,0 +1,160 @@
+BootStrap: shub
+From: willgpaik/qt5_aci:dsi_mrtrix3
+%setup
+
+%files
+
+%environment
+        # Python 2 is required for FSL
+        source /opt/rh/python27/enable
+
+        FSLDIR=/usr/local/fsl
+        . ${FSLDIR}/etc/fslconf/fsl.sh
+        PATH=${FSLDIR}/bin:${PATH}
+        export FSLDIR PATH
+
+        export ANTSPATH=/opt/sw/ants/bin
+        PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/:/opt/sw/ants/bin/"
+        export PATH
+
+        export R_LIBS=/usr/R:$R_LIBS
+        export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+        export PATH=/usr/local/bin:$PATH
+        export PATH=/usr/abin:$PATH
+        export LD_LIBRARY_PATH=/usr/lib64:$LD_LIBRARY_PATH
+        export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+
+        export PATH=$PATH:/opt/sw/nodejs/bin:/opt/sw/workbench/bin_rh_linux64/:/usr/local/freesurfer/7.1.1-1/bin
+
+        export PATH=/usr/local/Qt-5.12.5/bin:$PATH
+        export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5/lib:$LD_LIBRARY_PATH
+        export CPATH=/usr/local/Qt-5.12.5/include:$CPATH
+
+        export QTDIR=/usr/local/Qt-5.12.5
+        export QTLIB=/usr/local/Qt-5.12.5/lib
+        export QTINC=/usr/local/Qt-5.12.5/include
+
+%post
+        mkdir -p /opt/tmp
+        mkdir -p /opt/sw
+
+        PATH="/usr/local/bin/:$PATH:/usr/lib64/openmpi/bin/"
+        LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64/openmpi/lib/"
+        MPI_ROOT=/usr/lib64/openmpi/
+        export PATH
+        export LD_LIBRARY_PATH
+        export MPI_ROOT
+        export BOOST_ROOT=/usr/local/
+        source /opt/rh/devtoolset-8/enable
+
+        export PATH=/usr/local/Qt-5.12.5/bin:$PATH
+        export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5/lib:$LD_LIBRARY_PATH
+        export CPATH=/usr/local/Qt-5.12.5/include:$CPATH
+
+        export QTDIR=/usr/local/Qt-5.12.5
+        export QTLIB=/usr/local/Qt-5.12.5/lib
+        export QTINC=/usr/local/Qt-5.12.5/include
+
+        # Install FSL:
+        cd /opt/tmp
+        wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+        python fslinstaller.py -d /usr/local/fsl
+        rm fslinstaller.py
+        
+        FSLDIR=/usr/local/fsl
+        . ${FSLDIR}/etc/fslconf/fsl.sh
+        PATH=${FSLDIR}/bin:${PATH}
+        export FSLDIR PATH
+
+        # Install afni:
+        yum install -y epel-release
+        yum install -y tcsh libXp openmotif gsl xorg-x11-fonts-misc       \
+                    PyQt4 R-devel netpbm-progs gnome-tweak-tool ed     \
+                    libpng12 xorg-x11-server-Xvfb firefox \
+                    mesa-libGLw-devel
+        yum update -y
+
+        mkdir -p /usr/abin
+
+        export HOME=/usr
+        export PATH=/usr/abin:$PATH
+
+        cd $HOME
+
+        curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+        tcsh @update.afni.binaries -package linux_centos_7_64 -do_extras        
+
+        cp $HOME/abin/AFNI.afnirc $HOME/.afnirc
+        suma -update_env
+
+        export R_LIBS=$HOME/R
+        mkdir $R_LIBS
+        echo 'export R_LIBS=$HOME/R' >> ~/.bashrc
+        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
+        source ~/.bashrc
+
+        rPkgsInstall -pkgs ALL
+
+        cp $HOME/abin/AFNI.afnirc $HOME/.afnirc
+        suma -update_env
+
+        curl -O https://afni.nimh.nih.gov/pub/dist/edu/data/CD.tgz
+        tar xvzf CD.tgz
+        cd CD
+        tcsh s2.cp.files . ~
+        cd ..
+        # https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/install_instructs/steps_linux_Fed_RH.html#prepare-for-bootcamp
+        rm CD.tgz
+        rm -rf CD
+
+        afni_system_check.py -check_all
+
+        @afni_R_package_install -shiny -circos
+
+        @update.afni.binaries -d
+
+        # Install C3D:
+        cd /opt/tmp
+        wget https://sourceforge.net/projects/c3d/files/c3d/1.0.0/c3d-1.0.0-Linux-x86_64.tar.gz
+        tar -xf c3d-1.0.0-Linux-x86_64.tar.gz -C /opt/sw
+        cd /opt/sw
+        mv c3d-1.0.0-Linux-x86_64 c3d
+
+        # Install FreeSurfer:
+        cd /opt/tmp
+        wget https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-CentOS7-7.1.1-1.x86_64.rpm
+        yum -y localinstall freesurfer-CentOS7-7.1.1-1.x86_64.rpm
+        
+        # Install ICA-AROMA:
+        cd /opt/tmp
+        wget https://github.com/maartenmennes/ICA-AROMA/archive/e8d7a58.tar.gz
+        tar -xf e8d7a58.tar.gz -C /opt/sw
+        cd /opt/sw
+        mv ICA-AROMA-e8d7a5891563aff7ff71375078314c417d32d808 ICA-AROMA
+
+        # Install bids-validator:
+        cd /opt/tmp
+        wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz
+        tar -xf node-v12.18.3-linux-x64.tar.xz -C /opt/sw/
+        cd /opt/sw
+        mv node-v12.18.3-linux-x64 nodejs
+        export PATH=$PATH:/opt/sw/nodejs/bin
+
+        wget https://github.com/bids-standard/bids-validator/archive/v1.5.4.tar.gz
+        tar -xf v1.5.4.tar.gz -C /opt/sw
+        cd /opt/sw
+        mv bids-validator-1.5.4 bids-validator
+        cd /opt/sw/bids-validator/bids-validator/bin
+        npm install -g bids-validator
+
+
+        # Install connectome-workbench
+        yum -y install freeglut-devel
+        cd /opt/tmp
+        wget https://www.humanconnectome.org/storage/app/media/workbench/workbench-rh_linux64-v1.4.2.zip
+        unzip workbench-rh_linux64-v1.4.2.zip
+        mv workbench /opt/sw
+
+
+        # Install fMRIPrep:
+        pip3 install fmriprep
