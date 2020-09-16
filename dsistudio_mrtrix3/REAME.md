@@ -20,7 +20,7 @@ ACI-I graphics libraries updated:
 `> singularity shell --nv willgpaik-qt5_aci-master-dsi_mrtrix3.simg`
 
 2019/6/17  
-~~**Singularity.dsi_mrtrix3_ants** cannot be build on Singularity Hub due to 2 hr time restriction~~  
+~~**Singularity.dsi_mrtrix3_ants** cannot be built on Singularity Hub due to 2 hr time restriction~~  
 Recipe with Ants is added
 
 2019/6/24  
@@ -30,5 +30,6 @@ Recipe with FLS is added
 NVIDIA driver installation and EoD libraries are removed  
 
 2020/9/15  
-Recipe for DSI Studio, MRTrix3, ANTs, FSL, and fMRIPrep is added (with NVIDIA CUDA)  
-(This recipe is based on dsi_mrtrix3 recipe. All other packages will be installed with this recipe.)
+Recipe for DSI Studio, MRTrix3, ~~ANTs~,~~ FSL, and fMRIPrep is added (with NVIDIA CUDA)  
+(This recipe is based on dsi_mrtrix3 recipe. All other packages will be installed with this recipe.)  
+**Singularity.dsi_mrtrix3_ants** cannot be built on Singularity Hub due to 2 hr time restriction
