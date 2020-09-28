@@ -51,4 +51,5 @@ Qt5 container is updated to have nvidia driver
 Ubuntu container is updated to have NVIDIA driver (Ubuntu 16.04 based)
 
 2020/9/28  
-Qt5 container is updated to use CUDA 9.1 version (for FSL with CUDA)
+Qt5 container is updated to use CUDA 9.1 version (for FSL with CUDA)  
+(Reference: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/GPU)
