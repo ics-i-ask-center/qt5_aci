@@ -1,5 +1,5 @@
 BootStrap: shub
-From: willgpaik/centos7_aci:gpu
+From: willgpaik/centos7_aci:cuda9.1
 
 %setup
 
