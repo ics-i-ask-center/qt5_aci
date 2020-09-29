@@ -58,11 +58,11 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         # Install ANTs:
         cd /opt/sw
         mkdir ants
-        cd /opt/sw/tmp
+        cd /opt/tmp
         git clone https://github.com/ANTsX/ANTs.git
         cd ants
         git config --global url."https://".insteadOf git://
-        cmake3 /opt/sw/tmp/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
+        cmake3 /opt/tmp/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
         make -j 2
 
         # Install FSL:
