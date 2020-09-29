@@ -54,6 +54,16 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export QTDIR=/usr/local/Qt-5.12.5
         export QTLIB=/usr/local/Qt-5.12.5/lib
         export QTINC=/usr/local/Qt-5.12.5/include
+        
+        # Install ANTs:
+        cd /opt/sw
+        mkdir ants
+        cd /opt/sw/tmp
+        git clone https://github.com/ANTsX/ANTs.git
+        cd ants
+        git config --global url."https://".insteadOf git://
+        cmake3 /opt/sw/tmp/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
+        make -j 2
 
         # Install FSL:
         cd /opt/tmp
@@ -158,3 +168,6 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
 
         # Install fMRIPrep:
         pip3 install fmriprep
+
+        # remove temp directory:
+        rm -rf /opt/sw/tmp
