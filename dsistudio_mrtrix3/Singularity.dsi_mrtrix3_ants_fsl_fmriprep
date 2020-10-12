@@ -144,10 +144,10 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
 
         # Install bids-validator:
         cd /opt/tmp
-        wget https://nodejs.org/dist/v12.18.3/node-v12.18.3-linux-x64.tar.xz
-        tar -xf node-v12.18.3-linux-x64.tar.xz -C /opt/sw/
+        wget https://nodejs.org/dist/v12.19.0/node-v12.19.0-linux-x64.tar.xz
+        tar -xf node-v12.19.0-linux-x64.tar.xz -C /opt/sw/
         cd /opt/sw
-        mv node-v12.18.3-linux-x64 nodejs
+        mv node-v12.19.0-linux-x64 nodejs
         export PATH=$PATH:/opt/sw/nodejs/bin
 
         wget https://github.com/bids-standard/bids-validator/archive/v1.5.4.tar.gz
