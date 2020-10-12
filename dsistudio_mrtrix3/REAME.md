@@ -36,3 +36,6 @@ Recipe for DSI Studio, MRTrix3, ~~ANTs,~~ FSL, and fMRIPrep is added (with NVIDI
 
 2020/9/29  
 Missing ANTs is now added to the recipe (Singularity.dsi_mrtrix3_ants_fsl_fmriprep)
+
+2020/10/12  
+Nodejs is upgraded to 12.19.0
