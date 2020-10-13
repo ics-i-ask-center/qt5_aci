@@ -155,10 +155,10 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         mv node-v12.19.0-linux-x64 nodejs
         export PATH=$PATH:/opt/sw/nodejs/bin
 
-        wget -q https://github.com/bids-standard/bids-validator/archive/v1.5.4.tar.gz
-        tar -xf v1.5.4.tar.gz -C /opt/sw
+        wget -q https://github.com/bids-standard/bids-validator/archive/v1.5.6.tar.gz
+        tar -xf v1.5.6.tar.gz -C /opt/sw
         cd /opt/sw
-        mv bids-validator-1.5.4 bids-validator
+        mv bids-validator-1.5.6 bids-validator
         cd /opt/sw/bids-validator/bids-validator/bin
         npm install -g bids-validator
 
