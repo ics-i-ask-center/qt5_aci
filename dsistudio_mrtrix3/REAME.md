@@ -39,3 +39,7 @@ Missing ANTs is now added to the recipe (Singularity.dsi_mrtrix3_ants_fsl_fmripr
 
 2020/10/12  
 Nodejs is upgraded to 12.19.0
+
+2020/10/13  
+File downloads are now done silently (wget and curl)  
+Bids-validator is upgraded to 1.5.6
