@@ -16,6 +16,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export ANTSPATH=/opt/sw/ants/bin
         PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/:/opt/sw/ants/bin/"
         export PATH
+        
+        export FREESURFER_HOME=/usr/local/freesurfer/7.1.1-1/
+        source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
         export R_LIBS=/usr/R:$R_LIBS
         export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
@@ -134,6 +137,8 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         cd /opt/tmp
         wget -q https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-CentOS7-7.1.1-1.x86_64.rpm
         yum -q -y localinstall freesurfer-CentOS7-7.1.1-1.x86_64.rpm
+        export FREESURFER_HOME=/usr/local/freesurfer/7.1.1-1/
+        source $FREESURFER_HOME/SetUpFreeSurfer.sh
         
         # Install ICA-AROMA:
         cd /opt/tmp
