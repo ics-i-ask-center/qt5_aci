@@ -7,6 +7,8 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
 %environment
         # Python 2 is required for FSL
         source /opt/rh/python27/enable
+        
+        source /opt/rh/devtoolset-8/enable
 
         FSLDIR=/usr/local/fsl
         . ${FSLDIR}/etc/fslconf/fsl.sh
@@ -125,6 +127,12 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         @afni_R_package_install -shiny -circos
 
         @update.afni.binaries -d
+        
+        # Installing R packages for 3dLME and 3dICC:
+        R --vanilla -e "install.packages('nlme', repos='http://lib.stat.cmu.edu/R/CRAN/')"
+        R --vanilla -e "install.packages('lme4', repos='http://lib.stat.cmu.edu/R/CRAN/')"
+        R --vanilla -e "install.packages('phia', repos='http://lib.stat.cmu.edu/R/CRAN/')"
+        R --vanilla -e "install.packages('snow', repos='http://lib.stat.cmu.edu/R/CRAN/')"
 
         # Install C3D:
         cd /opt/tmp
