@@ -45,4 +45,5 @@ File downloads are now done silently (wget and curl)
 Bids-validator is upgraded to 1.5.6
 
 2020/10/18  
-Freesurfer Qt plugin and library files are replaced
+Freesurfer Qt plugin and library files are replaced  
+UDUNITS is added (May not be essential)
