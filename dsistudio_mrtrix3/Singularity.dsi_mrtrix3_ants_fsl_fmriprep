@@ -148,6 +148,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export FREESURFER_HOME=/usr/local/freesurfer/7.1.1-1/
         source $FREESURFER_HOME/SetUpFreeSurfer.sh
         
+        cp /usr/local/Qt-5.12.5/plugins/platforms/* /usr/local/freesurfer/7.1.1-1/lib/qt/plugins/platforms/
+        cp /usr/local/Qt-5.12.5/lib/ /usr/local/freesurfer/7.1.1-1/lib/qt/lib/
+        
         # Install ICA-AROMA:
         cd /opt/tmp
         wget -q https://github.com/maartenmennes/ICA-AROMA/archive/e8d7a58.tar.gz
