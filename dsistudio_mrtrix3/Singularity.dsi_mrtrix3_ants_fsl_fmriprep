@@ -60,6 +60,14 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export QTLIB=/usr/local/Qt-5.12.5/lib
         export QTINC=/usr/local/Qt-5.12.5/include
         
+        # Install UDUNITS:
+        cd /opt/tmp
+        wget https://www.unidata.ucar.edu/downloads/udunits/udunits-2.2.26.tar.gz
+        tar -xf udunits-2.2.26.tar.gz
+        cd udunits-2.2.26
+        ./configure
+        make -j 2 && make install
+        
         # Install ANTs:
         cd /opt/sw
         mkdir ants
