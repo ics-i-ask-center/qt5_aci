@@ -157,7 +157,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         source $FREESURFER_HOME/SetUpFreeSurfer.sh
         
         cp /usr/local/Qt-5.12.5/plugins/platforms/* /usr/local/freesurfer/7.1.1-1/lib/qt/plugins/platforms/
-        cp /usr/local/Qt-5.12.5/lib/* /usr/local/freesurfer/7.1.1-1/lib/qt/lib/
+        cp /usr/local/Qt-5.12.5/lib/libQt5* /usr/local/freesurfer/7.1.1-1/lib/qt/lib/
         
         # Install ICA-AROMA:
         cd /opt/tmp
@@ -165,6 +165,8 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         tar -xf e8d7a58.tar.gz -C /opt/sw
         cd /opt/sw
         mv ICA-AROMA-e8d7a5891563aff7ff71375078314c417d32d808 ICA-AROMA
+        cd ICA-AROMA
+        python2.7 -m pip install -r requirements.txt
 
         # Install bids-validator:
         cd /opt/tmp
