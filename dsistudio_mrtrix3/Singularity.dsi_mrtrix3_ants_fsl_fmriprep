@@ -167,6 +167,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export PATH=$PATH:/opt/sw/nodejs/bin
 
         wget -q https://github.com/bids-standard/bids-validator/archive/v1.5.6.tar.gz
+        cd /opt/tmp
         tar -xf v1.5.6.tar.gz -C /opt/sw
         cd /opt/sw
         mv bids-validator-1.5.6 bids-validator
@@ -186,4 +187,5 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         pip3 install fmriprep
 
         # remove temp directory:
+        rm -rf /opt/tmp
         rm -rf /opt/sw/tmp
