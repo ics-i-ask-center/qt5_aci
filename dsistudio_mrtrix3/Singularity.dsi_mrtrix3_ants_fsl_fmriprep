@@ -43,6 +43,8 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         mkdir -p /opt/tmp
         mkdir -p /opt/sw
 
+        source /opt/rh/python27/enable
+        
         PATH="/usr/local/bin/:$PATH:/usr/lib64/openmpi/bin/"
         LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64/openmpi/lib/"
         MPI_ROOT=/usr/lib64/openmpi/
@@ -68,6 +70,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         ./configure
         make -j 2 && make install
         
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
+        
         # Install ANTs:
         cd /opt/sw
         mkdir ants
@@ -77,6 +82,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         git config --global url."https://".insteadOf git://
         cmake3 /opt/tmp/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
         make -j 2
+        
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         # Install FSL:
         cd /opt/tmp
@@ -88,6 +96,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         . ${FSLDIR}/etc/fslconf/fsl.sh
         PATH=${FSLDIR}/bin:${PATH}
         export FSLDIR PATH
+        
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         # Install afni:
         yum install -q -y epel-release
@@ -136,18 +147,27 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
 
         @update.afni.binaries -d
         
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
+        
         # Installing R packages for 3dLME and 3dICC:
         R --vanilla -e "install.packages('nlme', repos='http://lib.stat.cmu.edu/R/CRAN/')"
         R --vanilla -e "install.packages('lme4', repos='http://lib.stat.cmu.edu/R/CRAN/')"
         R --vanilla -e "install.packages('phia', repos='http://lib.stat.cmu.edu/R/CRAN/')"
         R --vanilla -e "install.packages('snow', repos='http://lib.stat.cmu.edu/R/CRAN/')"
 
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
+        
         # Install C3D:
         cd /opt/tmp
         wget -q https://sourceforge.net/projects/c3d/files/c3d/1.0.0/c3d-1.0.0-Linux-x86_64.tar.gz
         tar -xf c3d-1.0.0-Linux-x86_64.tar.gz -C /opt/sw
         cd /opt/sw
         mv c3d-1.0.0-Linux-x86_64 c3d
+        
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         # Install FreeSurfer:
         cd /opt/tmp
@@ -159,6 +179,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         cp /usr/local/Qt-5.12.5/plugins/platforms/* /usr/local/freesurfer/7.1.1-1/lib/qt/plugins/platforms/
         cp /usr/local/Qt-5.12.5/lib/libQt5* /usr/local/freesurfer/7.1.1-1/lib/qt/lib/
         
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
+        
         # Install ICA-AROMA:
         cd /opt/tmp
         wget -q https://github.com/maartenmennes/ICA-AROMA/archive/e8d7a58.tar.gz
@@ -167,6 +190,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         mv ICA-AROMA-e8d7a5891563aff7ff71375078314c417d32d808 ICA-AROMA
         cd ICA-AROMA
         python2.7 -m pip install -r requirements.txt
+        
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         # Install bids-validator:
         cd /opt/tmp
@@ -175,6 +201,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         cd /opt/sw
         mv node-v12.19.0-linux-x64 nodejs
         export PATH=$PATH:/opt/sw/nodejs/bin
+        
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         wget -q https://github.com/bids-standard/bids-validator/archive/v1.5.6.tar.gz
         cd /opt/tmp
@@ -183,7 +212,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         mv bids-validator-1.5.6 bids-validator
         cd /opt/sw/bids-validator/bids-validator/bin
         npm install -g bids-validator
-
+        
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         # Install connectome-workbench
         yum -q -y install freeglut-devel
@@ -192,10 +223,12 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         unzip workbench-rh_linux64-v1.4.2.zip
         mv workbench /opt/sw
 
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
 
         # Install fMRIPrep:
         pip3 install fmriprep
 
         # remove temp directory:
-        rm -rf /opt/tmp
-        rm -rf /opt/sw/tmp
+        rm -rf /opt/sw/tmp/*
+        rm -rf /opt/tmp/*
