@@ -205,8 +205,8 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         rm -rf /opt/sw/tmp/*
         rm -rf /opt/tmp/*
 
-        wget -q https://github.com/bids-standard/bids-validator/archive/v1.5.6.tar.gz
         cd /opt/tmp
+        wget -q https://github.com/bids-standard/bids-validator/archive/v1.5.6.tar.gz
         tar -xf v1.5.6.tar.gz -C /opt/sw
         cd /opt/sw
         mv bids-validator-1.5.6 bids-validator
