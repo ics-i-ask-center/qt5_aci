@@ -189,7 +189,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         cd /opt/sw
         mv ICA-AROMA-e8d7a5891563aff7ff71375078314c417d32d808 ICA-AROMA
         cd ICA-AROMA
-        python2.7 -m pip install -r requirements.txt
+#        python2.7 -m pip install -r requirements.txt
         
         rm -rf /opt/sw/tmp/*
         rm -rf /opt/tmp/*
