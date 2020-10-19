@@ -47,3 +47,6 @@ Bids-validator is upgraded to 1.5.6
 2020/10/18  
 Freesurfer Qt plugin and library files are replaced  
 UDUNITS is added (May not be essential)
+
+2020/10/19  
+Minor updates (include fixing errors)
