@@ -53,4 +53,6 @@ Minor updates (include fixing errors)
 **"Singularity.dsi_mrtrix3_ants_fsl_fmriprep" requires 64GB+ memory**
 
 2020/10/20  
-Tix-devel, Tk-devel, and Tkinter are added
+Singularity.dsi_mrtrix3 (dependencies for FreeSurfer installation):
+- ANN-devel, Armadillo-devel, OpenCV-devel, PETSc-devel, Tix-devel, Tk-devel, and Tkinter are added  
+- GTS-0.7.6 is added
