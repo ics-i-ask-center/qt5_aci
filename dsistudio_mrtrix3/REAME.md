@@ -49,4 +49,5 @@ Freesurfer Qt plugin and library files are replaced
 UDUNITS is added (May not be essential)
 
 2020/10/19  
-Minor updates (include fixing errors)
+Minor updates (include fixing errors)  
+**Singularity.dsi_mrtrix3_ants_fsl_fmriprep requires 64GB+ memory**
