@@ -19,6 +19,7 @@ From: shub://willgpaik/qt5_aci:qt5
         libcanberra-gtk*
     yum -y install devtoolset-7-gcc*
     yum -y install tix-devel tk-devel tkinter
+    yum -y install petsc-devel armadillo-devel ann-devel opencv-devel
     
     yum -y update
     
@@ -44,6 +45,16 @@ From: shub://willgpaik/qt5_aci:qt5
     ./dsistudio_mrtrix3_install.sh
     
     rm dsistudio_mrtrix3_install.sh
+    
+    # Install GTS (for FreeSurfer)
+    cd /tmp
+    wget https://sourceforge.net/projects/gts/files/gts/0.7.6/gts-0.7.6.tar.gz
+    tar -xf gts-0.7.6.tar.gz
+    cd gts-0.7.6
+    ./configure
+    make -j 2 && make install
+    cd ..
+    rm -rf gts-*
     
     # Download requires libraries for EoD:
 #    cd /opt/
