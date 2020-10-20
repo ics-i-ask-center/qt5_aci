@@ -51,3 +51,6 @@ UDUNITS is added (May not be essential)
 2020/10/19  
 Minor updates (include fixing errors)  
 **"Singularity.dsi_mrtrix3_ants_fsl_fmriprep" requires 64GB+ memory**
+
+2020/10/20  
+Tix-devel, Tk-devel, and Tkinter are added
