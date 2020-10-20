@@ -54,9 +54,17 @@ From: willgpaik/centos7_aci:cuda9.1
     qmake
     make -j 2 && make install
     
+    # Install QtX11Extras
+    cd /tmp
+    git clone https://github.com/qt/qtx11extras.git
+    cd qtx11extras
+    git checkout 5.12.5
+    qmake
+    make -j 2 && make install
+    
     
     cd /tmp
-    rm -rf qtbase qtcharts qtsvg
+    rm -rf qtbase qtcharts qtsvg qtx11extras
 
 
     # Make symlink to qmake-qt5
