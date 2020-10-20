@@ -18,6 +18,7 @@ From: shub://willgpaik/qt5_aci:qt5
         mesa-libGL-devel.i686 \
         libcanberra-gtk*
     yum -y install devtoolset-7-gcc*
+    yum -y install tix-devel tk-devel tkinter
     
     yum -y update
     
