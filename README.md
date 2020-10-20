@@ -55,5 +55,5 @@ Qt5 container is updated to use CUDA 9.1 version (for FSL with CUDA)
 (Reference: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/GPU)
 
 2020/10/20  
-Qt5X11Extras are added to the Qt5 recipe  
+Qt5X11Extras is added to the Qt5 recipe  
 (Ubuntu container will not be updated unless necessary)
