@@ -56,6 +56,18 @@ From: shub://willgpaik/qt5_aci:qt5
     cd ..
     rm -rf gts-*
     
+    # Install VTK (for FreeSurfer)
+    cd /tmp
+    wget https://www.vtk.org/files/release/9.0/VTK-9.0.1.tar.gz
+    tar -xf VTK-9.0.1.tar.gz
+    cd VTK-9.0.1
+    mkdir build
+    cd build
+    cmake3 ..
+    make -j 2 && make install
+    cd ../..
+    rm -rf VTK-*
+    
     # Download requires libraries for EoD:
 #    cd /opt/
 #    svn export https://github.com/willgpaik/MorphoGraphX_aci.git/trunk/eod_graphics_libraries
