@@ -55,4 +55,4 @@ Minor updates (include fixing errors)
 2020/10/20  
 Singularity.dsi_mrtrix3 (dependencies for FreeSurfer installation):
 - ANN-devel, Armadillo-devel, OpenCV-devel, PETSc-devel, Tix-devel, Tk-devel, and Tkinter are added  
-- GTS-0.7.6 is added
+- GTS-0.7.6 and VTK-9.0.1 are added
