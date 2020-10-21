@@ -21,6 +21,9 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         
         export FREESURFER_HOME=/usr/local/freesurfer/7.1.1-1/
         source $FREESURFER_HOME/SetUpFreeSurfer.sh
+        
+        export PATH=$PATH:/opt/sw/ICA-AROMA/ICA_AROMA.py
+        export AROMA_VERSION="0.4.4"
 
         export R_LIBS=/usr/R:$R_LIBS
         export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
@@ -211,6 +214,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         cd /opt/sw
         mv ICA-AROMA-e8d7a5891563aff7ff71375078314c417d32d808 ICA-AROMA
         cd ICA-AROMA
+        chmod +x ICA_AROMA.py
 #        python2.7 -m pip install -r requirements.txt
         
         rm -rf /opt/sw/tmp/*
@@ -247,9 +251,10 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
 
         rm -rf /opt/sw/tmp/*
         rm -rf /opt/tmp/*
+        rm -rf $HOME/.npm $HOME/.conda $HOME/.empty
 
         # Install fMRIPrep:
-        pip3 install fmriprep
+        pip3 install --no-cache-dir fmriprep
 
         # remove temp directory:
         rm -rf /opt/sw/tmp/*
