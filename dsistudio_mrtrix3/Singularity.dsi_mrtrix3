@@ -46,27 +46,6 @@ From: shub://willgpaik/qt5_aci:qt5
     
     rm dsistudio_mrtrix3_install.sh
     
-    # Install GTS (for FreeSurfer)
-    cd /tmp
-    wget https://sourceforge.net/projects/gts/files/gts/0.7.6/gts-0.7.6.tar.gz
-    tar -xf gts-0.7.6.tar.gz
-    cd gts-0.7.6
-    ./configure
-    make -j 2 && make install
-    cd ..
-    rm -rf gts-*
-    
-    # Install VTK (for FreeSurfer)
-    cd /tmp
-    wget https://www.vtk.org/files/release/9.0/VTK-9.0.1.tar.gz
-    tar -xf VTK-9.0.1.tar.gz
-    cd VTK-9.0.1
-    mkdir build
-    cd build
-    cmake3 ..
-    make -j 2 && make install
-    cd ../..
-    rm -rf VTK-*
     
     # Download requires libraries for EoD:
 #    cd /opt/
