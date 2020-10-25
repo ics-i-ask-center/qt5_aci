@@ -8,7 +8,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         # Python 2 is required for FSL
         source /opt/rh/python27/enable
         
-        source /opt/rh/devtoolset-8/enable
+#        source /opt/rh/devtoolset-8/enable
 
         FSLDIR=/usr/local/fsl
         . ${FSLDIR}/etc/fslconf/fsl.sh
@@ -19,7 +19,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/:/opt/sw/ants/bin/"
         export PATH
         
-        export FREESURFER_HOME=/usr/local/freesurfer/7.1.1-1/
+        export FREESURFER_HOME=/usr/local/freesurfer
         source $FREESURFER_HOME/SetUpFreeSurfer.sh
         
         export PATH=$PATH:/opt/sw/ICA-AROMA/ICA_AROMA.py
