@@ -55,7 +55,10 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export LD_LIBRARY_PATH
         export MPI_ROOT
         export BOOST_ROOT=/usr/local/
-        source /opt/rh/devtoolset-8/enable
+        
+        # Don't enable devtoolset (FreeSurfer needs GCC version 4.8)
+        # (Ref: http://freesurfer.net/fswiki/BuildRequirements)
+#        source /opt/rh/devtoolset-8/enable
 
         export PATH=/usr/local/Qt-5.12.5/bin:$PATH
         export LD_LIBRARY_PATH=/usr/local/Qt-5.12.5/lib:$LD_LIBRARY_PATH
@@ -194,15 +197,31 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         cd /opt/tmp
         rm -rf VTK-*
 
-        # Install FreeSurfer:
+        # Install FreeSurfer (Try manual installation):
         cd /opt/tmp
-        wget -q https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-CentOS7-7.1.1-1.x86_64.rpm
-        yum -q -y localinstall freesurfer-CentOS7-7.1.1-1.x86_64.rpm
-        export FREESURFER_HOME=/usr/local/freesurfer/7.1.1-1/
+#        wget -q https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-CentOS7-7.1.1-1.x86_64.rpm
+#        yum -q -y localinstall freesurfer-CentOS7-7.1.1-1.x86_64.rpm
+        wget https://surfer.nmr.mgh.harvard.edu/pub/data/fspackages/prebuilt/centos7-packages.tar.gz
+        tar -xf centos7-packages.tar.gz -C /opt/sw/
+        mv /opt/sw/packages /opt/sw/fs_pkgs
+        git clone https://github.com/freesurfer/freesurfer.git
+        cd freesurfer
+        git checkout fs-7.1
+        mkdir build
+        cd build
+        cmake -DCMAKE_INSTALL_PREFIX=/usr/local/freesurfer -DFS_PACKAGES_DIR=/opt/sw/fs_pkgs/ -DANN_LIBRARIES=/usr/lib64 \
+                -DARMADILLO_INCLUDE_DIRS=/usr/include:/usr/include/armadillo_bits -DARMADILLO_LIBRARIES=/usr/lib64 \
+                -DBLAS_LIBRARIES=/usr/lib64 -DGTS_LIBRARY=/usr/local/lib/libgts.so -DLAPACK_LIBRARIES=/usr/local/lib64 \
+                -DX11_Xxf86misc_LIB=/usr/lib64/libXxf86misc.so.1 -DX11_xkbfile_INCLUDE_DIR=/usr/include \
+                -DX11_xkbfile_LIB=/usr/lib64/libxkbcommon-x11.so -DX11_Xdmcp_INCLUDE_PATH=/usr/include \
+                -DX11_Xdmcp_LIB=/usr/lib64/libXdmcp.so.6 -DX11_Xss_INCLUDE_PATH=/usr/include \
+                -DX11_Xss_LIB=/usr/lib64/libXss.so.1 -DX11_Xtst_INCLUDE_PATH=/usr/include \
+                -DX11_Xtst_LIB=/usr/lib64/libXtst.so.6 -DOpenMP_gomp_LIBRARY=/usr/lib64/libgomp.so.1
+        export FREESURFER_HOME=/usr/local/freesurfer/
         source $FREESURFER_HOME/SetUpFreeSurfer.sh
         
-        cp /usr/local/Qt-5.12.5/plugins/platforms/* /usr/local/freesurfer/7.1.1-1/lib/qt/plugins/platforms/
-        cp /usr/local/Qt-5.12.5/lib/libQt5* /usr/local/freesurfer/7.1.1-1/lib/qt/lib/
+        cp /usr/local/Qt-5.12.5/plugins/platforms/* /usr/local/freesurfer/qt/plugins/platforms/
+        cp /usr/local/Qt-5.12.5/lib/libQt5* /usr/local/freesurfer/lib/qt/lib/
         
         rm -rf /opt/sw/tmp/*
         rm -rf /opt/tmp/*
