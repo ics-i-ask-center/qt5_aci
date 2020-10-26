@@ -66,3 +66,4 @@ Singularity.dsi_mrtrix3_ants_fsl_fmriprep:
 Singularity.dsi_mrtrix3 (dependencies for FreeSurfer installation):
 - Minor updates
 - R package installations are moved to the bottom in order to use GCC-8
+- Proj, GDAL, GEOS, and Curl are added
