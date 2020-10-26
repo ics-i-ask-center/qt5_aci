@@ -250,8 +250,8 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         pip3 install --no-cache-dir fmriprep
         
         
-        source /opt/rh/devtoolset-8/enable
         # Install AFNI R packages:
+        source /opt/rh/devtoolset-8/enable
         rPkgsInstall -pkgs ALL
         @afni_R_package_install -shiny -circos
         
@@ -260,9 +260,6 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         R --vanilla -e "install.packages('lme4', repos='http://lib.stat.cmu.edu/R/CRAN/')"
         R --vanilla -e "install.packages('phia', repos='http://lib.stat.cmu.edu/R/CRAN/')"
         R --vanilla -e "install.packages('snow', repos='http://lib.stat.cmu.edu/R/CRAN/')"
-
-        rm -rf /opt/sw/tmp/*
-        rm -rf /opt/tmp/*
         
         # remove temp directory:
         rm -rf /opt/sw/tmp/*
