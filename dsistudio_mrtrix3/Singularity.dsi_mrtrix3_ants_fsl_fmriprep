@@ -56,7 +56,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export MPI_ROOT
         export BOOST_ROOT=/usr/local/
         
-        # Don't enable devtoolset (FreeSurfer needs GCC version 4.8)
+        # Do not enable devtoolset (FreeSurfer needs GCC version 4.8)
         # (Ref: http://freesurfer.net/fswiki/BuildRequirements)
 #        source /opt/rh/devtoolset-8/enable
 
@@ -130,7 +130,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export R_LIBS=$HOME/R
         mkdir $R_LIBS
         echo 'export R_LIBS=$HOME/R' >> ~/.bashrc
-        echo  'setenv R_LIBS ~/R'     >> ~/.cshrc
+        echo 'setenv R_LIBS ~/R'     >> ~/.cshrc
         source ~/.bashrc
 
         rPkgsInstall -pkgs ALL
