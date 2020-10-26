@@ -43,7 +43,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         export QTINC=/usr/local/Qt-5.12.5/include
 
 %post
-        yum -q -y install freeglut-devel
+        yum -q -y install freeglut-devel proj-devel proj-epsg proj-nad 
         yum -y update
 
         mkdir -p /opt/tmp
@@ -73,9 +73,33 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         
         # Install UDUNITS:
         cd /opt/tmp
-        wget https://www.unidata.ucar.edu/downloads/udunits/udunits-2.2.26.tar.gz
+        wget -q https://www.unidata.ucar.edu/downloads/udunits/udunits-2.2.26.tar.gz
         tar -xf udunits-2.2.26.tar.gz
         cd udunits-2.2.26
+        ./configure
+        make -j 2 && make install
+        
+        # Install GDAL:
+        cd /opt/tmp
+        wget -q https://github.com/OSGeo/gdal/releases/download/v2.4.4/gdal-2.4.4.tar.gz
+        tar -xf gdal-2.4.4.tar.gz
+        cd gdal-2.4.4
+        ./configure
+        make -j 2 && make install
+        
+        # Install GEOS
+        cd /opt/tmp
+        wget -q http://download.osgeo.org/geos/geos-3.8.1.tar.bz2
+        tar -xf geos-3.8.1.tar.bz2
+        cd geos-3.8.1
+        ./configure
+        make -j 2 && make install
+        
+        # Install Curl
+        cd /opt/tmp
+        wget -q https://curl.haxx.se/download/curl-7.73.0.tar.gz
+        tar -xf curl-7.73.0.tar.gz
+        cd curl-7.73.0
         ./configure
         make -j 2 && make install
         
