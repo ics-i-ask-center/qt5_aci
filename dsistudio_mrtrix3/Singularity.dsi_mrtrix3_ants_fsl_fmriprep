@@ -209,7 +209,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
         git checkout fs-7.1
         mkdir build
         cd build
-        cmake -DCMAKE_INSTALL_PREFIX=/usr/local/freesurfer -DFS_PACKAGES_DIR=/opt/sw/fs_pkgs/ -DANN_LIBRARIES=/usr/lib64 \
+        cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/freesurfer -DFS_PACKAGES_DIR=/opt/sw/fs_pkgs/ -DANN_LIBRARIES=/usr/lib64 \
                 -DARMADILLO_INCLUDE_DIRS=/usr/include:/usr/include/armadillo_bits -DARMADILLO_LIBRARIES=/usr/lib64 \
                 -DBLAS_LIBRARIES=/usr/lib64 -DGTS_LIBRARY=/usr/local/lib/libgts.so -DLAPACK_LIBRARIES=/usr/local/lib64 \
                 -DX11_Xxf86misc_LIB=/usr/lib64/libXxf86misc.so.1 -DX11_xkbfile_INCLUDE_DIR=/usr/include \
@@ -217,6 +217,7 @@ From: willgpaik/qt5_aci:dsi_mrtrix3
                 -DX11_Xdmcp_LIB=/usr/lib64/libXdmcp.so.6 -DX11_Xss_INCLUDE_PATH=/usr/include \
                 -DX11_Xss_LIB=/usr/lib64/libXss.so.1 -DX11_Xtst_INCLUDE_PATH=/usr/include \
                 -DX11_Xtst_LIB=/usr/lib64/libXtst.so.6 -DOpenMP_gomp_LIBRARY=/usr/lib64/libgomp.so.1
+        make -j 2 && make install
         export FREESURFER_HOME=/usr/local/freesurfer/
         source $FREESURFER_HOME/SetUpFreeSurfer.sh
         
