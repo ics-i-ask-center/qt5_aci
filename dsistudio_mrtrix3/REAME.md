@@ -55,12 +55,12 @@ Minor updates (include fixing errors)
 2020/10/20  
 Singularity.dsi_mrtrix3 (dependencies for FreeSurfer installation):
 - ANN-devel, Armadillo-devel, OpenCV-devel, PETSc-devel, Tix-devel, Tk-devel, and Tkinter are added  
-~~- GTS-0.7.6 and VTK-9.0.1 are added~~ (updated: 2020/10/26)
+- ~~GTS-0.7.6 and VTK-9.0.1 are added~~ (updated: 2020/10/26)
 
 2020/10/25  
 Singularity.dsi_mrtrix3_ants_fsl_fmriprep:  
 - Devtoolset is unloaded (FreeSurfer requires GCC 4.8)
-~~- FreeSufer installation is done manually (Changed from RPM installation)~~ (updated: 2020/10/26)
+- ~~FreeSufer installation is done manually (Changed from RPM installation)~~ (updated: 2020/10/26)
 
 2020/10/26  
 Singularity.dsi_mrtrix3 (dependencies for FreeSurfer installation):
