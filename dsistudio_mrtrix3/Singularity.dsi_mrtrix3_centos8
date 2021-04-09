@@ -1,0 +1,29 @@
+BootStrap: shub
+From: willgpaik/centos8_roar:gpu
+%setup
+
+%files
+
+%environment 
+    PATH="$PATH:/opt/sw/dsistudio/build/:/opt/sw/mrtrix3/bin/"
+    export PATH
+
+%runscript
+
+
+%post
+    dnf -y install petsc-devel armadillo-devel ann-devel opencv-devel
+    
+    dnf -y update
+    
+    export BOOST_ROOT=/usr/local/
+
+    # Install DSI Studio and MRtrix3
+    mkdir -p /opt/sw/
+    cd /opt/
+    wget https://raw.githubusercontent.com/willgpaik/qt5_aci/master/dsistudio_mrtrix3_install.sh
+    chmod +x dsistudio_mrtrix3_install.sh
+    ./dsistudio_mrtrix3_install.sh
+    
+    rm dsistudio_mrtrix3_install.sh
+    
