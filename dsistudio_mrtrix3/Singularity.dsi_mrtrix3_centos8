@@ -31,7 +31,7 @@ From: willgpaik/centos8_roar:gpu
 
     # Install DSI Studio and MRtrix3
     mkdir -p /opt/sw/
-    cd /opt/sw
+    cd /opt
     wget https://raw.githubusercontent.com/willgpaik/qt5_aci/master/dsistudio_mrtrix3_install.sh
     chmod +x dsistudio_mrtrix3_install.sh
     ./dsistudio_mrtrix3_install.sh
