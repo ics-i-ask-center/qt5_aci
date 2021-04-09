@@ -37,15 +37,4 @@ From: willgpaik/centos8_roar:gpu
     ./dsistudio_mrtrix3_install.sh
     
     rm dsistudio_mrtrix3_install.sh
-    
-    # Install ANTs
-    cd /opt/sw
-    mkdir ants
-    git clone https://github.com/ANTsX/ANTs.git
-    cd ants
-    git config --global url."https://".insteadOf git://
-    cmake3 /opt/sw/ANTs -DSuperBuild_ANTS_USE_GIT_PROTOCOL=off -DBUILD_TESTING=off
-    make -j 2
-    
-    cd /opt/sw
-    rm -rf ANTs
+
